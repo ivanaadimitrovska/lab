@@ -1,0 +1,125 @@
+<!--<div class="container" xmlns:th="http://www.thymeleaf.org">-->
+<!--&lt;!&ndash;    <nav class="navbar navbar-expand-md navbar-dark bg-dark">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <a class="navbar-brand" href="/">COURSES</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"&ndash;&gt;-->
+<!--&lt;!&ndash;                    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">&ndash;&gt;-->
+<!--&lt;!&ndash;                <span class="navbar-toggler-icon"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;            </button>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <div class="col mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <div class="row">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                        <div class="col-sm-12 col-md-12">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                            <a href="/listcourses" class="btn btn-block btn-dark">List Courses</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                        </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                </div>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </nav>&ndash;&gt;-->
+
+<!--    <form class="form-signin mt-xl-5" method="post" action="/login">-->
+<!--        <h2 class="form-signin-heading">Sign in</h2>-->
+<!--        <p>-->
+<!--            <label for="username" class="sr-only">Username</label>-->
+<!--            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""-->
+<!--                   autofocus="">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <label for="password" class="sr-only">Password</label>-->
+<!--            <input type="password" id="password" name="password" class="form-control" placeholder="Password"-->
+<!--                   required="">-->
+<!--        </p>-->
+
+<!--        <div th:text="${param.error}" class="text-danger"></div>-->
+
+<!--        <button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
+<!--    </form>-->
+<!--    <a href="/register" class="btn btn-block btn-light">Register here</a>-->
+<!--</div>-->
+
+<!--&lt;!&ndash;<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Categories</title>&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">&ndash;&gt;-->
+<!--&lt;!&ndash;    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<nav class="navbar navbar-expand-md navbar-dark bg-dark">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;        <a class="navbar-brand" href="/">COURSES</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"&ndash;&gt;-->
+<!--&lt;!&ndash;                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">&ndash;&gt;-->
+<!--&lt;!&ndash;            <span class="navbar-toggler-icon"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        </button>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="col mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="col-sm-12 col-md-12">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a href="/listcourses" class="btn btn-block btn-dark">List Courses</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</nav>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<form class="form-signin mt-xl-5" method="post" action="/login">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2 class="form-signin-heading">Sign in</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;    <p>&ndash;&gt;-->
+<!--&lt;!&ndash;        <label for="username" class="sr-only">Username</label>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""&ndash;&gt;-->
+<!--&lt;!&ndash;               autofocus="">&ndash;&gt;-->
+<!--&lt;!&ndash;    </p>&ndash;&gt;-->
+<!--&lt;!&ndash;    <p>&ndash;&gt;-->
+<!--&lt;!&ndash;        <label for="password" class="sr-only">Password</label>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="password" id="password" name="password" class="form-control" placeholder="Password"&ndash;&gt;-->
+<!--&lt;!&ndash;               required="">&ndash;&gt;-->
+<!--&lt;!&ndash;    </p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <div th:text="${param.error}" class="text-danger"></div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>&ndash;&gt;-->
+<!--&lt;!&ndash;</form>&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="/register" class="btn btn-block btn-light">Register here</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">-->
+<!--<meta content="text/html; charset=UTF-8">-->
+<!--<head>-->
+<!--    <meta content="text/html; charset=UTF-8">-->
+<!--    <title>Welcome and Choose a Course</title>-->
+<!--    <style type="text/css">-->
+<!--        body {-->
+<!--            width: 800px;-->
+<!--            margin: auto;-->
+<!--        }-->
+<!--    </style>-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<!--    <link rel="stylesheet" href="../static/courses.css">-->
+<!--</head>-->
+
+<!--<body>-->
+<div class="container" xmlns:th="http://www.thymeleaf.org">
+    <form class="form-signin mt-xl-5" th:action="@{/login}" th:method="POST">
+        <h2 class="form-signin-heading">Sign in</h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" th:required="false"
+                   autofocus="">
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                   th:required="false">
+        </p>
+
+        <div th:text="${param.error}" class="text-danger"></div>
+
+        <button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+    <a href="/register" class="btn btn-block btn-light">Register here</a>
+</div>
+<!--</body>-->
+<!--</html>-->

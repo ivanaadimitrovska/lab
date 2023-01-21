@@ -1,0 +1,138 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Add-course</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link href="/courses.css" rel="stylesheet"/>
+</head>
+<body>
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">List All Grades</h1>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <ul>
+
+        <li class="red" th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='5'}"><th:block   th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '+student.getGrade().getTimestamp()}" /></li>
+        <li class="red" th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='4'}"><th:block   th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '+student.getGrade().getTimestamp()}" /></li>
+        <li class="red" th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='3'}"><th:block   th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '+student.getGrade().getTimestamp()}" /></li>
+        <li class="red" th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='2'}"><th:block   th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '+student.getGrade().getTimestamp()}" /></li>
+        <li class="red" th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='1'}"><th:block   th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '+student.getGrade().getTimestamp()}" /></li>
+
+        <li th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='6'}"><th:block   th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '+student.getGrade().getTimestamp()}" /></li>
+        <li th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='7'}"><th:block   th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '+student.getGrade().getTimestamp()}" /></li>
+        <li th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='8'}"><th:block   th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '+student.getGrade().getTimestamp()}" /></li>
+        <li th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='9'}"><th:block   th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '+student.getGrade().getTimestamp()}" /></li>
+      </ul>
+      <ul>
+        <li class="red" th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='5'}"><th:block th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '}" />
+          <th:block th:text="${#temporals.format(student.getGrade().getTimestamp(), 'dd-MM-yyyy HH:mm:ss')}"/></li>
+        <li class="red" th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='4'}"><th:block th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '}" />
+          <th:block th:text="${#temporals.format(student.getGrade().getTimestamp(), 'dd-MM-yyyy HH:mm:ss')}"/></li>
+        <li class="red" th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='3'}"><th:block th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '}" />
+          <th:block th:text="${#temporals.format(student.getGrade().getTimestamp(), 'dd-MM-yyyy HH:mm:ss')}"/></li>
+        <li class="red" th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='2'}"><th:block th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '}" />
+          <th:block th:text="${#temporals.format(student.getGrade().getTimestamp(), 'dd-MM-yyyy HH:mm:ss')}"/></li>
+        <li class="red" th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='1'}"><th:block th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '}" />
+          <th:block th:text="${#temporals.format(student.getGrade().getTimestamp(), 'dd-MM-yyyy HH:mm:ss')}"/></li>
+
+        <li th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='6'}"><th:block th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '}" />
+          <th:block th:text="${#temporals.format(student.getGrade().getTimestamp(), 'dd-MM-yyyy HH:mm:ss')}"/></li>
+        <li th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='7'}"><th:block th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '}" />
+          <th:block th:text="${#temporals.format(student.getGrade().getTimestamp(), 'dd-MM-yyyy HH:mm:ss')}"/></li>
+        <li th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='8'}"><th:block th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '}" />
+          <th:block th:text="${#temporals.format(student.getGrade().getTimestamp(), 'dd-MM-yyyy HH:mm:ss')}"/></li>
+        <li th:each="student : ${students}" th:if="${student.getGrade().getGrade()=='9'}"><th:block th:text="${student.getName() + ' ' + student.getSurname()
+        + ' ' + student.getGrade().getGrade() + ' '}" />
+          <th:block th:text="${#temporals.format(student.getGrade().getTimestamp(), 'dd-MM-yyyy HH:mm:ss')}"/></li>
+
+      </ul>
+
+<!--      <div class="form-group">-->
+<!--        <label>Teacher</label>-->
+<!--        <select name="id_prof" class="form-group">-->
+<!--          <option th:if="${course} != null"-->
+<!--                  th:selected="${course.getTeacher()!=null && course.getTeacher().getId() == profesor.getId()}"-->
+<!--                  th:each="profesor : ${profesori}" th:text="${profesor.getTeacherFullname().getName() + ' ' + profesor.getTeacherFullname().getSurname()}"-->
+<!--                  th:value="${profesor.getId()}"></option>-->
+<!--          <option th:if="${course} == null"-->
+<!--                  th:each="teacher : ${profesori}" th:text="${teacher.getTeacherFullname().getName() + ' ' + teacher.getTeacherFullname().getSurname()}"-->
+<!--                  th:value="${teacher.getId()}"></option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--      <form th:action="@{/courses/findBetween}">-->
+<!--        <h3 style="color:green">Filter grades by date here..</h3>-->
+
+<!--      </form>-->
+<!--      <form method="get" action="/courses/listGradesBetween">-->
+<!--        <label for='from'>From:</label><input type="datetime-local" name="from" id="from"/>-->
+<!--        <label for='to'>To:</label><input type="datetime-local" name="to" id="to"/>-->
+<!--        <input type="submit" name="between" value="View" href="FindBetween"> <br/> <br/>-->
+
+<!--      </form>-->
+
+      <form method="get" action="/courses/listGradesBetween">
+        <label for='from'>From:</label><input type="datetime-local" name="from" id="from"/>
+        <label for='to'>To:</label><input type="datetime-local" name="to" id="to"/>
+        <input type="submit" name="between" value="View" href="FindBetween"> <br/> <br/>
+      </form>
+
+      <form method="get" action="/courses/padnati">
+<!--        <label for='from'>From:</label><input type="datetime-local" name="from" id="from"/>-->
+<!--        <label for='to'>To:</label><input type="datetime-local" name="to" id="to"/>-->
+        <input type="submit" name="padnati" value="Listaj Padnati" href="padnati"> <br/> <br/>
+      </form>
+
+<!--      <div class="col mb-3">-->
+<!--        <div class="row">-->
+<!--          <div class="col-sm-12 col-md-12">-->
+<!--            <a href="/courses/listGrades1" class="btn btn-block btn-dark">View</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+
+      <form action="/courses/listGrades" method="POST">
+<!--        <label for='from'>From:</label><input type="datetime-local" name="from" id="from"/>-->
+<!--        <label for='to'>To:</label><input type="datetime-local" name="to" id="to"/>-->
+        <a type="button" class="btn btn-primary" href="/liststudents">Back</a>
+      </form>
+
+<!--      <form action="/courses/listGrades" method="POST">-->
+<!--        &lt;!&ndash;        <label for='from'>From:</label><input type="datetime-local" name="from" id="from"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;        <label for='to'>To:</label><input type="datetime-local" name="to" id="to"/>&ndash;&gt;-->
+<!--        <a type="button" class="btn btn-primary" href="/addStudent">Back</a>-->
+<!--      </form>-->
+<!--      <form action="/courses/change" method="post">-->
+<!--        <input type="submit" value="Change time format for grades"/>-->
+<!--      </form>-->
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+

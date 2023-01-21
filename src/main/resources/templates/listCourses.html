@@ -1,0 +1,94 @@
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">-->
+<!--<meta content="text/html; charset=UTF-8">-->
+<!--<head>-->
+<!--    <meta content="text/html; charset=UTF-8">-->
+<!--    <title>Welcome and Choose a Course</title>-->
+<!--    <style type="text/css">-->
+<!--        body {-->
+<!--            width: 800px;-->
+<!--            margin: auto;-->
+<!--        }-->
+<!--    </style>-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<!--    <link rel="stylesheet" href="../static/courses.css">-->
+<!--</head>-->
+
+<!--<body>-->
+<th:block xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<header>
+    <h1>Courses List</h1>
+    <div th:if="${hasError}" class="error">
+        <div th:text="${error}">
+        </div>
+    </div>
+    <ul>
+        <li th:each="course : ${lista}">
+            <th:block th:text="${course.getName()}" th:value="${course.getCourseId()}"></th:block>
+            <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+            <form th:method="delete" th:action="@{'/courses/delete/{id}' (id=${course.getCourseId()})}">
+                <button type="submit" class="btn btn-sm btn-danger delete-course" id="css" th:marginwidth="250px">
+                    <i class="fa fa-trash"> Delete</i>
+                </button>
+            </form>
+            </th:block>
+        </li>
+    </ul>
+</header>
+
+<h2>Choose course:</h2>
+<form th:method="POST" th:action="@{/courses}">
+    <div th:each="course: ${lista}" class="btn btn-block btn-dark add-course-btn">
+        <input th:id="${courseId}" type="radio" name="courseId" th:value="${course.courseId}">
+        <label th:for="course.courseId" th:text="${course.name}" class="btn btn-block btn-dark names" id="names"> </label>
+        <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+        <a th:href="@{'/courses/edit/{id}' (id=${course.getCourseId()})}" class="btn btn-block btn-dark edit-course"><i class="fa fa-trash">Edit</i></a>
+        </th:block>
+    </div>
+    </br></br>
+    <input type="submit" value="submit">
+</form>
+
+
+
+<!--    <form th:method="POST" th:action="@{/courses}">-->
+<!--    <h2 class="text-warning">Choose course:</h2>-->
+<!--    <table class="table">-->
+
+<!--        <tbody>-->
+<!--        <tr th:each="course: ${lista}" class="btn btn-block btn-dark add-course-btn">-->
+<!--            <td th:text="${course.getCourseId()}"></td>-->
+<!--            <td> <input  type="radio" name="courseId" th:value="${course.getCourseId()}" th:text="${course.getName()}"> </td>-->
+<!--            <td th:text="${course.getDescription()}"></td>-->
+<!--            <td th:text="${course.getTeacher().getTeacherFullname().getName()+ ' ' + course.getTeacher().getTeacherFullname().getSurname()}"></td>-->
+<!--            <td><th:block sec:authorize="hasRole('ROLE_ADMIN')"> <a th:href="@{/courses/edit/{id} (id = ${course.getCourseId()})}" class="btn btn-block btn-dark edit-course">Edit</a> <a th:href="@{/courses/delete/{id} (id=${course.getCourseId()})}" class="btn btn-danger delete-btn">Delete</a></th:block></td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--    <input type="submit" th:value="Submit"/>-->
+<!--    </form>-->
+
+
+
+
+
+
+
+
+    <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+        <div class="col mb-3">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <a href="/courses/add" class="btn btn-block btn-dark add-course">Add new course</a>
+                </div>
+            </div>
+        </div>
+    </th:block>
+
+<a th:if="${obraten}==true" th:href="@{'/courses/smeni-redosled'}"><i>Redosled</i></a>
+</th:block>
+<!--</body>-->
+<!--</html>-->
+

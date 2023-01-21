@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+  <meta charset="utf-8">
+  <title>WP lab - Students in Course</title>
+
+</head>
+<body>
+<header>
+  <h1>Students in Course </h1>
+</header>
+<section>
+  <div th:text="${ime_kurs}"></div>
+  <ul>
+    <li th:each="student : ${lista_studenti}"><th:block th:text="${student.getName() + ' ' + student.getSurname() + ' ' + student.getGrade().getGrade()}" /></li>
+  </ul>
+  <form th:method="POST" th:action="@{/studentEnrollmentSummary/post}">
+    <input type="submit" value="Back" href="/courses"/>
+  </form>
+</section>
+
+</body>
+</html>

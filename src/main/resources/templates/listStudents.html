@@ -1,0 +1,97 @@
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <meta charset="utf-8">-->
+<!--  <title>Add new Student to Course</title>-->
+<!--  <style type = "text/css">-->
+<!--    body {-->
+<!--      width: 800px;-->
+<!--      margin: auto;-->
+<!--    }-->
+<!--    table {-->
+<!--      width:100%;-->
+<!--    }-->
+<!--    table, td, th {-->
+<!--      border: 1px solid black;-->
+<!--      padding:3px 2px;-->
+<!--    }-->
+<!--    section {-->
+<!--      float: left;-->
+<!--      margin: 0 1.5%;-->
+<!--      width: 63%;-->
+<!--    }-->
+<!--    aside {-->
+<!--      float: right;-->
+<!--      margin: 0 1.5%;-->
+<!--      width: 30%;-->
+<!--    }-->
+<!--  </style>-->
+
+<!--</head>-->
+<!--<body>-->
+<th:block xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+  <header>
+    <h1>Student Enrollment - Select the Student </h1>
+  </header>
+  <section>
+    <ul>
+      <li th:each="student : ${studenti}"><th:block th:text="${student.getName() + ' ' + student.getSurname()}"/> </li>
+    </ul>
+    <h2>Select the student to enroll:</h2>
+
+    <form th:method="POST" th:action="@{/liststudents/admin}">
+      <input type="submit" name="listGrades" value="listGrades" href="listGrades"> <br/> <br/>
+<!--      <input type="submit" name="liststudentsincourse" value="List Students in course" href="studentsInCourse"/>-->
+      <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+      <input type="submit" name="createNew" value="Create New Student" href="add-student"> <br/> <br/>
+        <div th:each="student: ${studenti}">
+        <input type="radio" name="size" th:value="${student.username}" th:id="${student.username}" th:name="size">
+        <label th:for="student.username" th:text="${student.name + ' ' + student.surname}" th:name="size"></label>
+      </div>
+      <br/>
+      <input type="submit" value="Submit">
+      </th:block>
+    </form>
+<!--    <form th:method="POST" th:action="@{/liststudents}" sec:authorize="isAnonymous()">-->
+<!--      <input type="submit" value="List Students in course" th:href="@{/studentEnrollmentSummary}"/>-->
+<!--    </form>-->
+<!--    <form th:method="POST" th:action=""-->
+    <!--  <form th:method="POST" th:action="@{/addStudent}">-->
+    <!--    -->
+    <!--  </form>-->
+
+    <div class="col mb-3">
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <th:block sec:authorize="isAnonymous()">
+          <a href="/studentEnrollmentSummary" class="btn btn-dark">List Students in course</a>
+          </th:block>
+        </div>
+      </div>
+    </div>
+
+    <div class="col mb-3">
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+          <a href="/studentEnrollmentSummary/admin" class="btn btn-dark">List Students in course</a>
+          </th:block>
+        </div>
+      </div>
+    </div>
+  </section>
+  <aside>
+    <table>
+      <tr>
+        <th colspan="2">
+          Your Enrollment Status
+        </th>
+      </tr>
+      <tr>
+        <td><b>Course Id</b></td>
+        <td><th:block th:text="${courseId}"/> </td>
+      </tr>
+    </table>
+  </aside>
+</th:block>
+<!--</body>-->
+<!--</html>-->
